@@ -11,6 +11,7 @@ class CDUControl(QWidget):
         super().__init__(parent)
 
         self._usbif = usbif
+        self._bias = 356.0
 
         self._setup_ui()
 
@@ -45,6 +46,7 @@ class CDUControl(QWidget):
         self._angle_texts[idx].setText('%.3f\xB0' % angle)
 
     def set_phase(self, phase):
+        phase = (phase + self._bias) % 360
         phase = (360 - phase) % 360
         self._usbif.send(um.WriteCDUPhase(int((phase/360)*40000)))
 
