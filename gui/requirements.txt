@@ -1,0 +1,9 @@
+# Core dependencies for cmod_agc Python GUI
+pygame>=2.5.0
+PyOpenGL>=3.1.6
+numpy>=1.24
+pyserial>=3.5
+Pillow>=10.0.0
+
+# Optional, for plotting/logging extensions (safe to include)
+matplotlib>=3.8
